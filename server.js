@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+
+//The http.Server (same as http.CreateServer()) expects a function which has the following signature function(req, res)
+// require('express')(); will create a function
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const { v4: uuidV4 } = require('uuid');
@@ -12,6 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:room', (req, res) => {
+    // the default of this express.res.render method looks into the views folder for an ejs file
     res.render('room', { roomId: req.params.room });
 })
 

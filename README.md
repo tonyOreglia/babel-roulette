@@ -18,3 +18,23 @@ I want to build a platform where a person can sign on and immediately be in conv
 
 
 Estimate 3 months of work (working like 5 hours / week) (very roughly; finger in the air) 
+
+## Tasks 
+- [ ] modal to ask user for their UUID / generate new one
+- [ ] DB to store user credits 
+- [ ] UI 
+  - [ ] description of the product
+  - [ ] some kind of simple wrapper for the video's (minimalist)
+- [ ] new domain? 
+- [ ] upgrade server hardware? 
+  - [ ] case for the motherboard
+  - [ ] new hard drive
+  - [ ] air air pressure cleaning thing 
+- [ ] modal for user to choose `Teach and Earn` or `Learn and Burn`
+
+
+## Dependencies / Tech Stack 
+- [Peerjs](https://peerjs.com/) 
+- [Embedded Javascript (EJS)](https://ejs.co/)
+- [ExpressJS](https://expressjs.com/)
+- 

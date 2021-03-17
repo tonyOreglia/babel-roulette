@@ -7,15 +7,23 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const { v4: uuidV4 } = require('uuid');
 
+// set the template engine to use ejs
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
 
+// This is a built-in middleware function in Express. It serves static files and is based on serve-static.
+const handler = express.static('public')
+// now you can go to localhost:3000/script.js and see the scripts text ... :shrug: 
+// this is just giving the app access to the script
+app.use(handler);
+
+// redirect to the /:room definition which is next
 app.get('/', (req, res) => {
     res.redirect(`/${uuidV4()}`);
 })
 
+
 app.get('/:room', (req, res) => {
-    // the default of this express.res.render method looks into the views folder for an ejs file
+    // the default of this express.res.render method looks into the views folder; in this case for the room.ejs file
     res.render('room', { roomId: req.params.room });
 })
 

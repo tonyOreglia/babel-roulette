@@ -7,7 +7,7 @@ const videoGrid = document.getElementById('video-grid');
 const peerId = undefined;
 const myPeer = new Peer(peerId, {
     host: '/',
-    port: '3001'
+    port: '8083'
 })
 
 // creates the HTML element specified by tagName

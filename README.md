@@ -16,8 +16,24 @@ I want to build a platform where a person can sign on and immediately be in conv
 - Needs a nice UI ; can do but annoying / time consuming 
 - needs secure DB to store people's credits
 
-
 Estimate 3 months of work (working like 5 hours / week) (very roughly; finger in the air) 
+
+## User Experience / Flow 
+1. User visits website
+2. User enters personal UUID or if new they are given a new UUID
+3. User chooses target language and native language
+4. User indicates if they want to teach or learn 
+5. User is then linked to a partner
+
+If user enters personal UUID, the server is called and their profile is returned. They can then consume their credits by learning or earn credits by teaching. Updates sent to server for each minute earned or used. 
+
+## MVP 
+I go to the website; get a UUID; share that with someone and they can join and talk with me.
+
+### To get this out 
+1. run peerjs server; expose it to internet
+2. run chat website server; expose it to internet 
+3. update code to point to the "live" servers 
 
 ## Tasks 
 - [ ] modal to ask user for their UUID / generate new one
@@ -37,4 +53,16 @@ Estimate 3 months of work (working like 5 hours / week) (very roughly; finger in
 - [Peerjs](https://peerjs.com/) 
 - [Embedded Javascript (EJS)](https://ejs.co/)
 - [ExpressJS](https://expressjs.com/)
-- 
+
+
+## Resources
+- HTML 
+  - https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices
+  - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject
+  - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event
+- Peerjs
+  - https://peerjs.com/docs.html
+- [Socket.io](https://socket.io/docs/v3/index.html) - Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server using websockets.
+  - https://socket.io/docs/v3/server-api/#socket-join-room
+  - https://socket.io/docs/v3/glossary/#Room
+  - 

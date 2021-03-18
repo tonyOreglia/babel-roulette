@@ -27,16 +27,28 @@ app.get('/:room', (req, res) => {
     res.render('room', { roomId: req.params.room });
 })
 
-io.on('connection', socket => {
+// client side has initiated an socket.io connection to the server
+io.on('connection', (socket) => {
+    // 'join-room' event sent from client
     socket.on('join-room', (roomId, userId) => {
-        console.log(roomId, userId);
-        socket.join(roomId);
-        socket.to(roomId).broadcast.emit('user-connected', userId);
-        socket.on('disconnect', () => {
-            socket.to(roomId).broadcast.emit('user-disconnected', userId);
-        })
+        joinRoom(socket, roomId, userId);
     })
 })
 
+function joinRoom(socket, roomId, userId) {
+    console.log(roomId, userId);
+    // Adds the socket to the given room
+    // A Room is a server-side concept that allows broadcasting data to a subset of clients
+    socket.join(roomId);
+    // 'broadcast' sets a modifier for a subsequent event emission that the event data will only be broadcast to every sockets but the sender.
+    // emit user-connected event
+    socket.to(roomId).broadcast.emit('user-connected', userId);
+
+    socket.on('disconnect', () => {
+        socket.to(roomId).broadcast.emit('user-disconnected', userId);
+    })
+}
+
+// start the server listening on localhost port 3000
 server.listen(3000);
 

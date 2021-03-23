@@ -65,4 +65,6 @@ I go to the website; get a UUID; share that with someone and they can join and t
 - [Socket.io](https://socket.io/docs/v3/index.html) - Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server using websockets.
   - https://socket.io/docs/v3/server-api/#socket-join-room
   - https://socket.io/docs/v3/glossary/#Room
+  - https://www.nginx.com/blog/nginx-nodejs-websockets-socketio/
+  - https://stackoverflow.com/questions/29043879/socket-io-with-nginx
 - [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)

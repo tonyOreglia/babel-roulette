@@ -32,7 +32,7 @@ If user enters personal UUID, the server is called and their profile is returned
 
 ## MVP Phase 2 
 - [ ] camera on / off
-- [ ] mic on / off
+- [X] ~~*mic on / off*~~ [2021-03-25]
 - [ ] invitation to enter room / create new room
 
 ### To get this out 

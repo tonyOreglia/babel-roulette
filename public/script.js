@@ -20,7 +20,7 @@ const peers = {};
  *                  provides a MediaStream containing a video track and/or an audio track with the input.
  */
 
- const mute = (myVideo) => {
+const mute = (myVideo) => {
     console.log('muting');
     const audioTrack = myVideo.srcObject.getTracks().find(t => t.kind === 'audio');
     audioTrack.enabled = false;
@@ -30,6 +30,18 @@ const unMute = (myVideo) => {
     console.log('un-muting');
     const audioTrack = myVideo.srcObject.getTracks().find(t => t.kind === 'audio');
     audioTrack.enabled = true;
+}
+
+const startVideo = (myVideo) => {
+    console.log('starting video');
+    const videoTrack = myVideo.srcObject.getTracks().find(t => t.kind === 'video');
+    videoTrack.enabled = true;
+}
+
+const stopVideo = (myVideo) => {
+    console.log('stopping video');
+    const videoTrack = myVideo.srcObject.getTracks().find(t => t.kind === 'video');
+    videoTrack.enabled = false;
 }
 
 navigator.mediaDevices.getUserMedia({

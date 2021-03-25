@@ -28,7 +28,12 @@ Estimate 3 months of work (working like 5 hours / week) (very roughly; finger in
 If user enters personal UUID, the server is called and their profile is returned. They can then consume their credits by learning or earn credits by teaching. Updates sent to server for each minute earned or used. 
 
 ## MVP 
-I go to the website; get a UUID; share that with someone and they can join and talk with me.
+- [X] ~~*I go to the website; get a UUID; share that with someone and they can join and talk with me.*~~ [2021-03-23]
+
+## MVP Phase 2 
+- [ ] camera on / off
+- [ ] mic on / off
+- [ ] invitation to enter room / create new room
 
 ### To get this out 
 1. run peerjs server; expose it to internet

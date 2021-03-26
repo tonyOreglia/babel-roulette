@@ -1,7 +1,5 @@
 'use strict';
 
-const e = React.createElement;
-
 class MuteButton extends React.Component {
   constructor(props) {
     super(props);
@@ -9,22 +7,25 @@ class MuteButton extends React.Component {
   }
 
   render() {
-    if (this.state.muted) {
-      console.log('You muted this.');
-    }
-
-    return e(
-      'button',
-      { 
-        onClick: () => { 
-          this.setState({ muted: !this.state.muted })
-          return this.state.muted ? unMute(myVideo) : mute(myVideo); 
-        }
+    const icon = React.createElement("i", { className: "material-icons" }, 'volume_mute');
+    return React.createElement(
+      "button",
+      {
+        onClick: () => {
+          console.log("toggling mute");
+          this.setState({ muted: !this.state.muted });
+          return this.state.muted ? unMute(myVideo) : mute(myVideo);
+        },
+        className:
+          "mdl-button mdl-js-button mdl-button--fab mdl-button--colored",
       },
-      this.state.muted ? 'unMute' : 'Mute'
+      [icon]
     );
   }
 }
 
-const domContainer = document.querySelector('#mute_button_container');
-ReactDOM.render(e(MuteButton), domContainer);
+ReactDOM.render(React.createElement(MuteButton), document.querySelector('#mute_button_container'));
+
+{/* <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>; */}

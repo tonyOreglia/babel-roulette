@@ -11,14 +11,9 @@ const myPeer = new Peer();
 // the 'video' html element embeds a media player which supports video playback into the document.
 const myVideo = document.createElement('video');
 myVideo.muted = true;
+myVideo.style.marge = "10px";
 const peers = {};
 
-/**
- * mediaDevices:    The MediaDevices interface provides access to connected media input devices like cameras and microphones,
- *                  as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
- * getUserMedia:    With the user's permission through a prompt, turns on a camera and/or a microphone on the system and
- *                  provides a MediaStream containing a video track and/or an audio track with the input.
- */
 
 const mute = (myVideo) => {
     console.log('muting');
@@ -44,6 +39,16 @@ const stopVideo = (myVideo) => {
     videoTrack.enabled = false;
 }
 
+const leaveCall = (myVideo) => {
+    myVideo.remove();
+}
+
+/**
+ * mediaDevices:    The MediaDevices interface provides access to connected media input devices like cameras and microphones,
+ *                  as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
+ * getUserMedia:    With the user's permission through a prompt, turns on a camera and/or a microphone on the system and
+ *                  provides a MediaStream containing a video track and/or an audio track with the input.
+ */
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true

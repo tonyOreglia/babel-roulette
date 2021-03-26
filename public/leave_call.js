@@ -1,24 +1,22 @@
 'use strict';
 
-class ToggleVideoButton extends React.Component {
+class LeaveCall extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { videoOn: true };
   }
 
   render() {
     const icon = React.createElement(
       "i",
       { className: "material-icons" },
-      this.state.videoOn ? 'videocam_off' : 'videocam_on'
+      'logout'
     );
 
     return React.createElement(
       "button",
       {
         onClick: () => {
-          this.setState({ videoOn: !this.state.videoOn });
-          return this.state.videoOn ? stopVideo(myVideo) : startVideo(myVideo);
+          return leaveCall(myVideo);
         },
         className:
           "mdl-button mdl-js-button mdl-button--fab mdl-button--colored",
@@ -28,4 +26,7 @@ class ToggleVideoButton extends React.Component {
   }
 }
 
-ReactDOM.render(React.createElement(ToggleVideoButton), document.querySelector('#toggle_video_container'));
+ReactDOM.render(
+  React.createElement(LeaveCall),
+  document.querySelector("#leave_call_container")
+);

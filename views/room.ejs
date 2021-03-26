@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.teal-pink.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The HTML Title element (<title>) defines the document's title that is shown in a browser's title bar or a page's tab -->
     <title>Tonys amazing video app</title>
@@ -22,6 +28,7 @@
         grid-template-columns: repeat(auto-fill, 300px);
         grid-auto-rows: 300px;
     }
+
     video {
         width: 100%;
         height: 100%;
@@ -31,16 +38,35 @@
         object-fit: cover;
     }
 </style>
+
 <body>
-    <div id="video-grid"></div>
-    <div id="mute_button_container"></div>
-    <div id="toggle_video_container"></div>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row"></div>
+            <span class="mdl-layout__title">Babel Roulette</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+            </nav>
+        </header>
+        <main class="mdl-layout__content">
+            <div style="margin: 10px;" id="video-grid"></div>
+            <div style="margin: 10px;" class="mdc-touch-target-wrapper">
+                <span id="mute_button_container"></span>
+                <span id="toggle_video_container"></span>
+                <span id="leave_call_container"></span>
+            </div>
+        </main>
+    </div>
+    </div>
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <!-- Load our React component. -->
+    <script src="leave_call.js"></script>
     <script src="mute_button.js"></script>
     <script src="toggle_video_button.js"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 </body>
+
 </html>

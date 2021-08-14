@@ -10,6 +10,14 @@ Event the websites designed to accommodate conversation exchanges require messag
 
 I want to build a platform where a person can sign on and immediately be in conversation in their target language -- matched with another user that is on the platform. By just giving a passcode to uniquely identify themselves; they can gain credits by speaking in their native language; and then use the credits in their target language.
 
+## Run in production with pm2 
+```
+pm2 start npm -- start
+```
+
+See https://stackoverflow.com/questions/31579509/can-pm2-run-an-npm-start-script
+
+
 ## Challenges
 
 - requires multiple concurrent users == solution here can be to choose a single hour time slot once per week and market heavily.

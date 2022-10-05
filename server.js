@@ -50,5 +50,5 @@ function joinRoom(socket, roomId, userId) {
 }
 
 // start the server listening on localhost port 3000
-server.listen(8082);
+server.listen(8084);
 
